@@ -1,0 +1,58 @@
+.fieldset {
+  position: absolute;
+  top: 20vh;
+  right: 5vw;
+  width: max-content;
+  height: max-content;
+}
+.card {
+  height: 15vh;
+  width: 15vh;
+  z-index: 5;
+  background-color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+.cardImage {
+  height: 100%;
+  width: 100%;
+}
+.secondTitle {
+  display: block;
+  color: rgb(7, 5, 114);
+  text-shadow: 1px 1px 3px black;
+  font-size: 8vh;
+}
+.row {
+  display: flex;
+  padding: 5vh;
+}
+.explication {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: block;
+  color: rgb(12, 48, 80);
+  text-shadow: 1px 1px 5px black;
+  font-size: 5vh;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rectangle {
+  position: absolute;
+  height: 110vh;
+  width: 40vh;
+  top: 35vh;
+  left: calc(50vw - 20vh);
+  background-color: transparent;
+  box-shadow: inset -2px 2px 10px rgb(216, 178, 8),
+    inset 2px -2px 10px rgb(216, 178, 8), -2px 2px 10px rgb(216, 178, 8),
+    2px -2px 10px rgb(216, 178, 8);
+  border: 2px rgb(180, 9, 9) solid;
+  position: absolute;
+  z-index: -1;
+}

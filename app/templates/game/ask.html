@@ -1,0 +1,21 @@
+{% extends 'game/layout.html' %} 
+{% block title %}
+    {{text("eng", 7)}}
+{% endblock%} 
+{% block content %}
+    <h1 class="first">{{text(user["language"], 17)}}<h1>
+    {% for num in statut %}
+        <h2 class="question" id="{{str(num)}}">
+            {{text(user["language"], num)}}
+        </h2>
+        <div class="response hidden" id="{{"#"+str(num)}}">
+            {{text(user["language"], num+1)}}
+        </div>
+    {% endfor %}
+    <a href="/game/index" class="button back">{{text(user["language"], 12)}}</a>
+    <script type="text/javascript" src={{ url_for('static', filename='js/ask.js') }}></script>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/ask.css') }}"
+    />
+{% endblock %}

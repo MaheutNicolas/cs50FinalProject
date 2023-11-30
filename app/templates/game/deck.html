@@ -1,0 +1,45 @@
+{% extends 'game/layout.html' %} {% block title %}{{text("eng", 7)}}{% endblock
+%} {% block content %}
+<div class="deck">
+    {% for row in statut["deck"] %}
+        <div class="deckItem">
+            <div class="basic">
+                <!-- Image -->
+                <div class="card" id="{{row["card_id"]}}">
+                    <basic-shape class="cardImage" id="#{{row["card_id"]}}"></basic-shape>
+                </div>
+                <!-- Title -->
+                <div class="name">{{row["name"]}}</div>
+                <!-- form for add or remove from deck -->
+                <form method="post" action="/deck/index">
+                    <input type="text" id="start" name="id" value="{{row["card_id"]}}" hidden />
+                        {% if row["hand"] == 1 %}
+                            <button type="submit" id="inHand">
+                                {{text(statut["language"], 14)}}
+                            </button>
+            
+                        {% else %}
+                            <button type="submit" id="outHand">
+                                {{text(statut["language"], 13)}}
+                            </button>
+                        {% endif %}
+                </form>
+            </div>
+            <!-- Description -->
+            <div class="description">{{text(statut["language"], row["language_id"])}}</div>
+        </div>
+    {% endfor %}
+</div>
+<a href="/game" class="button back">{{text(statut["language"], 12)}}</a>
+<script type="text/javascript" src={{ url_for('static', filename='js/deck.js') }}></script>
+{% for name in statut["field"] %}
+<link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/card/' + name + '.css') }}"
+    />
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/deck.css') }}"
+/>
+{% endfor %}
+{% endblock %}

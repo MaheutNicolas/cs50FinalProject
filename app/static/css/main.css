@@ -1,0 +1,106 @@
+html,
+body,
+.content {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+.pos {
+  font-size: 5vh;
+  color: black;
+  padding: 5vh;
+  background-color: rgb(138, 92, 32);
+  border-radius: 40%;
+  border: 2px solid black;
+  width: max-content;
+  height: max-content;
+}
+.card {
+  height: 15vh;
+  width: 15vh;
+  z-index: 5;
+  background-color: wheat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+form {
+  top: 2vh;
+  left: 2vh;
+}
+
+#spirit {
+  background: radial-gradient(
+    circle at 50%,
+    #2856d1 0%,
+    #1787bd 21%,
+    #e28a1e 25%,
+    #e2d31e 27%,
+    #e28a1e 29%,
+    #1787bd 33%,
+    #2856d1 50%,
+    #3028d1 75%,
+    #10099c 100%
+  );
+}
+
+.cardImage {
+  height: 100%;
+  width: 100%;
+}
+
+.deckHolder,
+.cardHolder {
+  display: flex;
+  margin: 5%;
+  flex-wrap: wrap;
+  gap: 5vw;
+  justify-content: center;
+  margin-bottom: 10vh;
+}
+
+.selected {
+  box-shadow: 3px 3px 10px rgb(255, 106, 0);
+  background-color: rgb(248, 201, 113);
+  top: 5vh;
+}
+
+#lobby {
+  position: absolute;
+  bottom: 5vh;
+  right: 5vw;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.messageHolder {
+  position: absolute;
+  z-index: 9;
+  background-color: rgb(243, 203, 129);
+  padding: 5vh;
+  left: 45vw;
+  bottom: 45vh;
+}
+
+.button {
+  border: 1px black solid;
+  padding: 1vh;
+  background-color: rgb(250, 207, 129);
+  box-shadow: 2px 2px 2px black;
+  font-size: xx-large;
+}
+.button:hover {
+  background-color: rgb(226, 116, 61);
+}
+
+.languageHolder {
+  position: absolute;
+  top: 5vh;
+  right: 10vw;
+  width: 10vw;
+  height: 5vh;
+  background-color: wheat;
+}

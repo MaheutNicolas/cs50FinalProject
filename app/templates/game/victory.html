@@ -1,0 +1,10 @@
+{% extends 'game/layout.html' %} {% block title %}{{text(user["language"],7)}}
+{% endblock %} {% block content %}
+<div class="content" id="spirit">
+  <h1>{{text(user["language"], 16)}}</h1>
+  <form method="post" action="/game/index">
+    <input type="text" id="lobby" name="field" value="lobby" hidden />
+    <button type="submit" id="lobby">{{text(user["language"], 11)}}</button>
+  </form>
+</div>
+{% endblock %}

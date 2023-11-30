@@ -1,0 +1,42 @@
+{% extends 'game/layout.html' %} 
+{% block title %}
+  {{text("eng", 7)}}
+{% endblock %} 
+{% block content %}
+  <div class="content" id="{{statut["field"]}}">
+    <!-- Position -->
+    <div class="pos">{{statut["pos"]}}</div>
+    <!-- Card of the map -->
+    <div class="cardHolder">
+      {% for row in statut["cards"] %}
+        <div class="card" id="{{row}}">
+          <basic-shape class="cardImage" id="#{{row}}"></basic-shape>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- Card of the player -->
+    <div class="deckHolder">
+      {% for row in statut["deck"] %}
+        <div class="card" id="{{row}}">
+          <basic-shape class="cardImage" id="#{{row}}"></basic-shape>
+        </div>
+      {% endfor %}
+    </div>
+    <!-- Lobby -->
+    <form method="post" action="/game/index">
+      <input type="text" id="lobby" name="field" value="lobby" hidden />
+      <button type="submit" class="button" id="lobby">{{text(statut["language"], 11)}}</button>
+    </form>
+  </div>
+  <div class="messageHolder hidden">
+    <div id="messageHolder"></div>
+    <button id="validButton" onclick="reloadPage()">{{text(statut["language"], 29)}}</button>
+  </div>
+  
+  <!-- Link static -->
+  <script type="text/javascript" src={{ url_for('static', filename='js/board.js') }}></script>
+  <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/card/'+statut["field"]+'.css') }}"
+      />
+{% endblock %}

@@ -1,0 +1,53 @@
+.description {
+  width: 70vw;
+  position: relative;
+  bottom: 7vh;
+  left: 10vw;
+}
+.basic {
+  font-size: x-large;
+  display: flex;
+  gap: 5vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  width: 100vww;
+  background-color: wheat;
+  border: 1px black solid;
+  box-shadow: 2px 2px 6px black;
+  width: 95vw;
+}
+
+.back {
+  position: absolute;
+  bottom: 5vh;
+  right: 5vw;
+}
+html,
+body,
+.deck {
+  width: 95vw;
+  background-color: rgb(22, 38, 155);
+}
+#inHand,
+#outHand {
+  border: none;
+  padding: 2vh;
+  color: white;
+  border-radius: 10%;
+}
+#inHand {
+  background-color: rgb(5, 135, 5);
+}
+#inHand:hover {
+  background-color: rgb(85, 138, 85);
+}
+#outHand {
+  background-color: rgb(135, 5, 5);
+}
+#outHand:hover {
+  background-color: rgb(145, 93, 93);
+}
+
+.deck {
+  background-color: rgb(22, 38, 155);
+}

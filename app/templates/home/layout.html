@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spirit Enigma - {% block title %}{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/home.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="menu">
+      <a class="menuItem" href="/">Spirit Enigma</a>
+      <a class="menuItem" href="/auth/login">{{text("eng", 0)}}</a>
+      <a class="menuItem" href="/auth/create">{{text("eng", 1)}}</a>
+      <!--{{ url_for('auth.index') }}-->
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>

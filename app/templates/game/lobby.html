@@ -1,0 +1,74 @@
+{% extends 'game/layout.html' %} {% block title %}{{text("eng", 7)}}{% endblock
+%} {% block content %}
+<div class="content lobbyHolder">
+  <div class="buttonHolder">
+    <!-- start game -->
+    <form method="post" action="/game/index">
+      <input type="text" name="field" value="spirit" hidden />
+      <button type="submit" class="button">
+        {{text(statut["language"], 8)}}
+      </button>
+    </form>
+    <!-- ask question-->
+    <form method="get" action="/ask/index">
+      <button type="submit" class="button">
+        {{text(statut["language"], 9)}}
+      </button>
+    </form>
+    <!-- deck -->
+    <form method="get" action="/deck/index">
+      <button type="submit" class="button">
+        {{text(statut["language"], 10)}}
+      </button>
+    </form>
+    <!-- log out-->
+    <form method="post" action="/auth/logout">
+      <button type="submit" class="button">
+        {{text(statut["language"], 44)}}
+      </button>
+    </form>
+    <!-- change Language-->
+    <div class="languageHolder">
+      <form method="post" action="/language">
+        <select class="button" name="language" onchange="this.form.submit()">
+          <option type="submit" value="" disabled selected>
+            {{text(statut["language"], 45)}}
+          </option>
+          {% for row in statut["languageList"] %}
+          <option value="{{row}}">{{row}}</option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+  </div>
+  <!-- remove account -->
+  <button class="button deleteButton" onclick="display()">
+    {{text(statut["language"], 51)}}
+  </button>
+  <div class="hidden" id="deleteWindows">
+    <form method="post" action="/auth/delete">
+      <input type="password" id="password" name="password" class="input"
+      placeholder="{{text(statut["language"], 4)}}" required />
+      <button type="submit" class="button">
+        {{text(statut["language"], 44)}}
+      </button>
+    </form>
+  </div>
+  <!-- shape -->
+  <div class="indexShape"></div>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/lobby.css') }}"
+  />
+  <script>
+    function display() {
+      deleteWindows = document.getElementById("deleteWindows");
+      if (deleteWindows.classList.contains("hidden")) {
+        deleteWindows.classList.remove("hidden");
+      } else {
+        deleteWindows.classList.add("hidden");
+      }
+    }
+  </script>
+  {% endblock %}
+</div>

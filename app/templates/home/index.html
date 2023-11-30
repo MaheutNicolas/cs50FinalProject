@@ -1,0 +1,55 @@
+{% extends 'home/layout.html' %} {% block title %}{{text(lang, 5)}}{% endblock
+%} {% block content %}
+<h1 class="title">{{text(lang, 5)}}</h1>
+<form action="/">
+  <fieldset class="fieldset">
+    <legend>{{text(lang, 46)}}</legend>
+    {% for lan in langList %}
+      <div>
+        <input type="radio" id="{{lan}}" name="language" value="{{lan}}" class="langRadio" onchange="this.form.submit()" {% if lan == lang %} checked {% endif %} />
+        <label for="{{lan}}">{{lan}}</label>
+      </div>
+    {% endfor %}
+  </fieldset>
+</form>
+
+<h2 class="secondTitle">{{text(lang, 6)}}</h2>
+<div class="content">
+  <div class="rectangle"></div>
+  <div class="row"> 
+    <div class="card" id="1">
+      <basic-shape class="cardImage" id="#1"></basic-shape>
+    </div>
+    <div class="explication">{{text(lang, 47)}}</div>
+  </div>
+  <div class="row">
+    <div class="explication">{{text(lang, 48)}}</div> 
+    <div class="card" id="3">
+      <basic-shape class="cardImage" id="#3"></basic-shape>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card" id="15">
+      <basic-shape class="cardImage" id="#15"></basic-shape>
+    </div>
+    <div class="explication">{{text(lang, 49)}}</div>
+  </div>
+  <div class="row">
+    <div class="explication">{{text(lang, 50)}}</div>
+    <div class="card" id="8">
+      <basic-shape class="cardImage" id="#8"></basic-shape>
+    </div>
+    
+  </div>
+</div>
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/index.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/card/spirit.css') }}"
+/>
+{% endblock %}
+</radioButton>
