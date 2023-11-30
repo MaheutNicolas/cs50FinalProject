@@ -1,4 +1,4 @@
-# YOUR PROJECT TITLE
+# Spirit Enigma
 #### Video Demo:  https://youtu.be/tGpvV0P576k
 #### Description:
 My project is a riddle game based with Flask (back), JS (Front) and sqlite(DB)
